@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0D0D19 !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h2{
+            color:white;
+        }
+        
+        .login-container {
+      padding: 20px;
+      background: -webkit-linear-gradient(to right, #3b1432, #A349A4);
+      background: linear-gradient(to right, #b435b6, #13233A);
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.936);
+      border-radius: 10px;
+      width: 400px;
+      text-align: center; /* Center the button inside the container */
+}
+    .login-container button {
+    border-radius: 20px;
+    border: 1px solid #A349A4;
+    background-color: #703371;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    display: inline-block; 
+     }
+
+        .login-container input {
+            width: 380px;
+            padding: 10px;
+            margin: 10px 0 ;
+            color: rgb(0, 0, 0);
+            border: 1px solid #ccccccf9;
+            background-color: #e6e4eaf4;
+            border-radius: 10px;
+
+        }
+        
+        .login-container button:hover {
+            background-color: #be0bef;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div id="error-message" class="error"></div>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="validateLogin()">Login</button>
+    </div>
+
+    <script>
+        const correctUsername = "admin";
+        const correctPassword = "1234";
+
+        function validateLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (username === correctUsername && password === correctPassword) {
+                
+                window.location.href = "/adduser"; 
+            } else {
+                errorMessage.textContent = "Invalid username or password.";
+            }
+        }
+    </script>
+</body>
+</html>

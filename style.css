@@ -1,0 +1,426 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0D0D19 !important;
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #13233A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.highlight {
+    color: #A349A4;
+}
+
+/* Menu Styling */
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Push menu items to the right */
+}
+
+.menu > li {
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+.menu a.active {
+    color:#A349A4;
+}
+
+.menu a:hover {
+    color: #A349A4;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1A2B48 !important;
+    padding: 10px 0;
+    list-style-type: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown-item {
+    color: #FFFFFF;
+    padding: 8px 20px;
+    white-space: nowrap;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #3C4A68;
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Call to Action (CTA) */
+.cta {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.profile-icon {
+    font-size: 30px;
+    color: #A349A4;
+    text-decoration: none;
+    transition: color 0.3s;
+
+}
+
+.profile-icon:hover {
+    color: #FFFFFF;
+}
+
+/* Carousel Container */
+.carousel-container {
+    margin:50px ;
+    padding: 0 30px;
+    background-color: #0D0D19; /* Dark background to match the theme */
+    border-radius: 10px;
+}
+
+/* Carousel Custom Styles */
+.carousel-inner {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #0D0D19; /* Dark background for the carousel */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 600px; /* Increased height for a bigger carousel */
+    background-color: #0D0D19; /* Fallback background color */
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 1.2rem; /* Increase caption size for readability */
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 15px; /* Increased padding for larger control buttons */
+}
+
+/* Carousel Indicators */
+.carousel-indicators li {
+    background-color: #A349A4;
+    width: 14px; /* Slightly bigger indicators */
+    height: 14px;
+    border-radius: 50%;
+    margin: 5px;
+}
+.btn1 {
+    display: inline-block; /* Make it behave like a button */
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none !important; /* Remove underline */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 34, 184, 0.993);
+}
+
+.btn1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 20px rgba(124, 12, 184, 0.871);
+    color: #6f067a;
+}
+
+.mb-4{
+    color: #FFFFFF;
+}
+.mb-0{
+    color: #bbbbbb;
+}
+
+.carousel-indicators .active {
+    background-color: #FFFFFF;
+}
+/* Container Styling */
+.container-xxl {
+    background-color: #0D0D19 !important; /* Light background color */
+    padding: 80px 0;
+    margin: 30px;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #7f117a; /* Light blue */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2a2a2a; /* Dark gray */
+    margin-bottom: 20px;
+}
+
+.p1 {
+    font-size: 20px;
+    color: #f3f5f6; /* Medium gray */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+.about-image:hover img {
+    transform: scale(1.05); /* Scale up slightly */
+    filter: brightness(0.8); /* Darken the image */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
+}
+footer {
+    background-color: #13233A; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.footer-links li {
+    margin: 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    color: #7f117a; /* Highlight color on hover */
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-media p {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.social-media a img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Invert colors for white icons */
+    transition: transform 0.3s ease;
+}
+.social-media a{
+    color: #6f067a;
+    width: 30px;
+}
+.social-media a:hover{
+    color: #A349A4;
+}
+.social-media a:hover img {
+    transform: scale(1.1); /* Scale up icon on hover */
+}
+
+.copyright {
+    font-size: 14px;
+    color: #bbbbbb;
+    margin-top: 20px;
+}
+/* Media Query for Tablets (768px and below) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu > li {
+        margin: 10px 0;
+    }
+
+    .logo-img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .carousel-container {
+        margin: 30px;
+    }
+
+    .carousel-item img {
+        height: 400px; /* Adjust carousel height */
+    }
+
+    .category-section {
+        padding: 30px 10px;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .col-lg-6 {
+        flex: 1 1 100%; /* Full-width columns for categories */
+        min-height: 200px;
+    }
+}
+
+/* Mobile Navbar Styling */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-between; 
+        padding: 10px 15px;
+    }
+
+    .logo {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .logo-img {
+        height: 40px; 
+        width: 40px;
+    }
+
+    .brand {
+        font-size: 16px; 
+        margin-left: 10px; 
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 20px; 
+        cursor: pointer;
+        color: #FFFFFF;
+        margin: 0 10px;
+    }
+
+    .cta {
+        margin: 0; 
+    }
+
+    .profile-icon {
+        font-size: 20px; 
+        color: #FFFFFF; 
+    }
+
+    .menu {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        background-color: #13233A; 
+        border-radius: 5px;
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+
+    .menu.open {
+        display: flex; 
+    }
+}

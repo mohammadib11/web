@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename= '/css/linear.css') }}"
+    />
+</head>
+<body>
+    <nav class="navbar dark-theme">
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <div class="logo">
+        <img
+        src="{{ url_for ('static', filename='/img/Free__2_-removebg-preview.png')}}"
+        alt="LearnHub Logo"
+        class="logo-img"
+        />
+        <span class="brand">Learn<span class="highlight">Hub</span></span>
+    </div>
+    <ul class="menu">
+        <li><a href="/" class="nav-item active">Home</a></li>
+        <li><a href="#about.html" class="nav-item">About</a></li>
+
+        <!-- Dropdown for Levels -->
+        <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Levels</a>
+        <ul class="dropdown-menu">
+            <li><a href="/level1" class="dropdown-item">Level-1</a></li>
+            <li><a href="/level2" class="dropdown-item">Level-2</a></li>
+        </ul>
+        </li>
+
+        <!-- Dropdown for Fundamentals -->
+        <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Fundamentals</a>
+        <ul class="dropdown-menu">
+            <li><a href="/proglang" class="dropdown-item">Programming Languages</a></li>
+            <li><a href="/roadmap" class="dropdown-item">Roadmap</a></li>
+        </ul>
+        </li>
+
+        <!-- Dropdown for Departments -->
+        <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Departments</a>
+        <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item">Software Engineering</a></li>
+            <li><a href="#" class="dropdown-item">computer science</a></li>
+            <li><a href="#" class="dropdown-item">Networks</a></li>
+            <li><a href="#" class="dropdown-item">Ai</a></li>
+        </ul>
+        </li>
+        </ul>
+        <div class="cta">
+        <a href="#" class="profile-icon">👤</a>
+    </div>
+    </nav>
+    <main id="course-section" class="course-view">
+    <aside class="sidebar">
+        <h2>Linear-Algebra</h2>
+        <ul>
+        <li>
+        <a href="#" data-video="https://youtu.be/XVny91HGaqs?si=JPoe8SMFzdglnZpZ">Operations of Matrix</a>
+        </li>
+        <li>
+        <a href="#" data-video="https://youtu.be/BgtRtMEjS34?si=xZhhdntbbu-Ajm2f">Gauss Elimination</a>
+        </li>
+        <li>
+        <a href="#" data-video="https://youtu.be/jeD6f4nTMfc?si=6-w9B32oR1oOI7qY">Inverse of Matrix</a>
+        </li>
+        <li>
+        <a href="#" data-video="https://youtu.be/ddSb08XQ4uI?si=O635VpqgFCc6zD2w">Cramer's Rule</a>
+        </li>
+        <li>
+        <a href="#" data-video="https://youtu.be/9nyT5AzBfT8?si=YaK2z6oCFXUwAwoO">Dependent and Independent</a>
+        </li>
+        </ul>
+    </aside>
+    <section class="content">
+        <div class="video-placeholder">
+        <!-- Video will be dynamically inserted here -->
+        </div>
+        <div class="resources">Other Resources</div>
+    </section>
+    </main>
+
+    <script>
+    document.querySelectorAll(".sidebar a").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent default link behavior
+
+    const videoFile = this.getAttribute("data-video"); // Get the video file or YouTube link
+    const videoPlaceholder = document.querySelector(".video-placeholder");
+    let embedLink;
+
+    if (videoFile.includes("youtu.be")) {
+            // Convert YouTube short link to embed link
+            const videoId = videoFile.split("/").pop().split("?")[0];
+            embedLink = `https://www.youtube.com/embed/${videoId}`;
+    } 
+    else if (videoFile.includes("youtube.com/watch")) {
+            // Convert standard YouTube link to embed link
+            const videoId = new URL(videoFile).searchParams.get("v");
+            embedLink = `https://www.youtube.com/embed/${videoId}`;
+    } 
+    else {
+            embedLink = videoFile; // Assume it's a local or valid embed link
+    }
+
+    if (embedLink.includes("youtube.com/embed")) {
+            // Embed YouTube video
+            videoPlaceholder.innerHTML = `
+            <iframe width="100%" height="315" src="${embedLink}" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+            </iframe>`;
+    } 
+    else {
+            // Embed local video
+            videoPlaceholder.innerHTML = 
+            `<video width="100%" controls>
+            <source src="${embedLink}" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>`;
+    }
+        });
+    });
+
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('open');
+    }
+    </script>
+</body>
+</html>

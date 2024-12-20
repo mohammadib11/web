@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./pics/Free__2_-removebg-preview.png" rel="icon">
+    <title>CS Department Roadmap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0D0D19;
+            color: #f5f0f0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+        .roadmap {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+        .phase {
+            background: #1a2b488b;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5em;
+        }
+        .phase h2 {
+            margin-top: 0;
+            color:#A349A4;
+        }
+        .phase ul {
+            padding-left: 20px;
+        }
+        .phase ul li {
+            margin-bottom: 0.5em;
+        }
+        .resource {
+            margin-top: 1em;
+            font-style: italic;
+            color: #9e9b9b;
+        }
+        /* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #13233A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: auto;
+    height: 100%;
+    transition: 0.5s;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.highlight {
+    color: #A349A4;
+}
+
+/* Menu Styling */
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Push menu items to the right */
+}
+
+.menu > li {
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+.menu a.active {
+    color:#A349A4;
+}
+
+.menu a:hover {
+    color: #A349A4;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1A2B48 !important;
+    padding: 10px 0;
+    list-style-type: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown-item {
+    color: #FFFFFF;
+    padding: 8px 20px;
+    white-space: nowrap;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #3C4A68;
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Call to Action (CTA) */
+.cta {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.profile-icon {
+    font-size: 30px;
+    color: #A349A4;
+    text-decoration: none;
+    transition: color 0.3s;
+
+}
+
+.profile-icon:hover {
+    color: #FFFFFF;
+}
+/* Media Query for Tablets (768px and below) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu > li {
+        margin: 10px 0;
+    }
+
+    .logo-img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .carousel-container {
+        margin: 30px;
+    }
+
+    .carousel-item img {
+        height: 400px; /* Adjust carousel height */
+    }
+
+    .category-section {
+        padding: 30px 10px;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .col-lg-6 {
+        flex: 1 1 100%; /* Full-width columns for categories */
+        min-height: 200px;
+    }
+}
+
+/* Mobile Navbar Styling */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-between; 
+        padding: 10px 15px;
+    }
+
+    .logo {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .logo-img {
+        height: 40px; 
+        width: 40px;
+    }
+
+    .brand {
+        font-size: 16px; 
+        margin-left: 10px; 
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 20px; 
+        cursor: pointer;
+        color: #FFFFFF;
+        margin: 0 10px;
+    }
+
+    .cta {
+        margin: 0; 
+    }
+
+    .profile-icon {
+        font-size: 20px; 
+        color: #FFFFFF; 
+    }
+
+    .menu {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        background-color: #13233A; 
+        border-radius: 5px;
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+
+    .menu.open {
+        display: flex; 
+    }
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar dark-theme">
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <div class="logo">
+            <img src="{{ url_for ('static', filename='/img/Free__2_-removebg-preview.png')}}" alt="LearnHub Logo" class="logo-img">
+            <span class="brand">Learn<span class="highlight">Hub</span></span>
+        </div>
+        <ul class="menu">
+            <li><a href="/" class="nav-item active">Home</a></li>
+            <li><a href="#about.html" class="nav-item">About</a></li>
+
+
+            <!-- Dropdown for Levels -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Levels</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/level1" class="dropdown-item">Level-1</a></li>
+                    <li><a href="/level2" class="dropdown-item">Level-2</a></li>
+                    
+                </ul>
+            </li>
+
+            <!-- Dropdown for Fundamentals -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Fundamentals</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/proglang" class="dropdown-item">Programming Languages</a></li>
+                    <li><a href="/roadmap" class="dropdown-item">Roadmap</a></li>
+                </ul>
+            </li>
+
+            <!-- Dropdown for Departments -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Departments</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Software Engineering</a></li>
+                    <li><a href="#" class="dropdown-item">computer science</a></li>
+                    <li><a href="#" class="dropdown-item">Networks</a></li>
+                    <li><a href="#" class="dropdown-item">Ai</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="cta">
+            <a href="/manager" class="profile-icon">👤</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="roadmap">
+            <div class="phase">
+                <h2>Software Engineering</h2>
+                <ul>
+                    <li>Enhance software development lifecycle courses</li>
+                    <li>Introduce DevOps practices</li>
+                    <li>Collaborate with industry for real-world projects</li>
+                </ul>
+                <div class="resource">Resource: <a href="https://uwaterloo.ca/software-engineering/curriculum">SE Curriculum Guide</a></div>
+            </div>
+    
+            <div class="phase">
+                <h2>Artificial Intelligence</h2>
+                <ul>
+                    <li>Expand machine learning modules</li>
+                    <li>Develop AI ethics workshops</li>
+                    <li>Establish partnerships with AI-focused companies</li>
+                </ul>
+                <div class="resource">Resource: <a href="https://ai.google/research/">AI Research Lab</a></div>
+            </div>
+    
+            <div class="phase">
+                <h2>Data Science</h2>
+                <ul>
+                    <li>Implement big data analysis tools</li>
+                    <li>Focus on real-world data problem-solving</li>
+                    <li>Host data visualization workshops</li>
+                </ul>
+                <div class="resource">Resource: <a href="https://example.com/data-science-toolkit">Data Science Toolkit</a></div>
+            </div>
+    
+            <div class="phase">
+                <h2>Cybersecurity</h2>
+                <ul>
+                    <li>Offer advanced cryptography courses</li>
+                    <li>Build a cybersecurity simulation lab</li>
+                    <li>Partner with organizations for threat modeling</li>
+                </ul>
+                <div class="resource">Resource: <a href="https://datascience.berkeley.edu/curriculum/">Cybersecurity Lab Access</a></div>
+            </div>
+    
+            <div class="phase">
+                <h2>Cloud Computing</h2>
+                <ul>
+                    <li>Introduce cloud architecture certifications</li>
+                    <li>Expand courses on cloud-native applications</li>
+                    <li>Collaborate with cloud service providers</li>
+                </ul>
+                <div class="resource">Resource: <a href="https://www.nsa.gov/Academics/Cybersecurity-Education/">Cloud Labs</a></div>
+            </div>
+    
+            <div class="phase">
+                <h2>Human-Computer Interaction</h2>
+                <ul>
+                    <li>Enhance UI/UX design curriculum</li>
+                    <li>Introduce courses on accessibility in design</li>
+                    <li>Organize design thinking workshops</li>
+                </ul>
+                <div class="resource">Resource: <a href="https://aws.amazon.com/training/learning-paths/">HCI Design Hub</a></div>
+            </div>
+    
+            <div class="phase">
+                <h2>Networking</h2>
+                <ul>
+                    <li>Focus on advanced networking protocols</li>
+                    <li>Offer hands-on experience with network security</li>
+                    <li>Expand wireless communication topics</li>
+                </ul>
+                <div class="resource">Resource: <a href="https://www.interaction-design.org/courses">Networking Lab Guide</a></div>
+            </div>
+    
+            <div class="phase">
+                <h2>Robotics</h2>
+                <ul>
+                    <li>Introduce autonomous systems programming</li>
+                    <li>Develop real-world robotics projects</li>
+                    <li>Host robotics competitions</li>
+                </ul>
+                <div class="resource">Resource: <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/overview.html">Robotics Research Group</a></div>
+            </div>
+        </section>
+    </div>
+    <script>
+        function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('open');
+    }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="{{ url_for('static', filename= '/css/style.css') }}"
+    />
+    <link href="./Free__2_-removebg-preview.png" rel="icon">
+
+    <title>LearnHub</title>
+    <!-- Bootstrap CSS (Optional if you want to use Bootstrap styles) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- AOS CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+
+</head>
+
+<body>
+    <nav class="navbar dark-theme">
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <div class="logo">
+            <img src="{{ url_for ('static', filename='/img/Free__2_-removebg-preview.png')}}" alt="LearnHub Logo" class="logo-img">
+            <span class="brand">Learn<span class="highlight">Hub</span></span>
+        </div>
+        <ul class="menu">
+            <li><a href="/" class="nav-item active">Home</a></li>
+            <li><a href="#about.html" class="nav-item">About</a></li>
+
+
+            <!-- Dropdown for Levels -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Levels</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/level1" class="dropdown-item">Level-1</a></li>
+                    <li><a href="/level2" class="dropdown-item">Level-2</a></li>
+                    
+                </ul>
+            </li>
+
+            <!-- Dropdown for Fundamentals -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Fundamentals</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/proglang" class="dropdown-item">Programming Languages</a></li>
+                    <li><a href="/roadmap" class="dropdown-item">Roadmap</a></li>
+                </ul>
+            </li>
+
+            <!-- Dropdown for Departments -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Departments</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Software Engineering</a></li>
+                    <li><a href="#" class="dropdown-item">computer science</a></li>
+                    <li><a href="#" class="dropdown-item">Networks</a></li>
+                    <li><a href="#" class="dropdown-item">Ai</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="cta">
+            <a href="/manager" class="profile-icon">👤</a>
+        </div>
+    </nav>
+
+    <!-- Carousel Section -->
+    <div class="carousel-container">
+        <div id="customCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#customCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#customCarousel" data-slide-to="1"></li>
+                <li data-target="#customCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for ('static', filename='/img/01-Learn-How-to-Code-a-Mobile-app.webp')}}" alt="Slide 1">
+                    <div class="carousel-caption">
+                        <h5>Join us!</h5>
+                        <a href="/login" target="_blank" class="btn1">Click Me</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for ('static', filename='/img/1700715187294.jpg')}}" alt="Slide 2">
+                    <div class="carousel-caption">
+                        <h4>Find what's right for you</h4>
+                        <p>Start your journey into the world of code from here.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for ('static', filename='/img/Programming-languages-for-kids-learn-to-code-from-scratch.png')}}"alt="Slide 3">
+                    <div class="carousel-caption">
+                        <h4>Amazing courses!</h4>
+                        <p>Practical codes and innovative solutions for programmers</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#customCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#customCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+   <!-- About Start -->
+<div class="container-xxl py-5" data-aos="fade-up">
+    <div class="container" id="about.html">
+        <div class="row g-5">
+            <!-- Image Column -->
+            <div class="col-lg-6 about-image" data-aos="fade-up" data-aos-delay="100" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="img-fluid position-absolute w-100 h-100" src="{{ url_for ('static', filename='/img/program-code-icon-purple-background-3d_327483-701.avif')}}" alt="About Us" style="object-fit: cover;">
+                </div>
+            </div>
+            
+            <!-- Text Column -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <h6 class="section-title">About</h6>
+                <span class="brand">Learn<span class="highlight">Hub</span></span>
+                <p class="mb-4">Welcome to LearnHub, where knowledge ignites curiosity and fuels success. Our educational platform is designed to inspire, guide, and support learners of all ages and backgrounds.</p>
+                <p class="mb-4">With a wide range of resources and interactive tools, we’re committed to making learning engaging and accessible. Whether you’re taking your first steps or advancing your skills, we’re here to help you achieve your goals and turn dreams into reality. Join us on this journey to discover, learn, and grow!</p>
+                
+                <!-- Features List -->
+                <div class="row gy-2 gx-4 mb-4">
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Courses for different levels</p>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-delay="500">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-delay="600">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Additional courses</p>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-delay="700">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Various sources</p>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-delay="800">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Organizing schedules</p>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-delay="900">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Interactive Courses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!--categories -->
+<div class="container category-section" id="category.html">
+    <div class="text-center">
+        <h6 class="sections-title">Categories</h6>
+        <h1 class="main-title">Courses Categories</h1>
+    </div>
+    <div class="row category-container">
+        <div class="col-lg-6" data-aos="fade-up">
+            <a href="#." class="cat-item">
+                <img src="{{ url_for ('static', filename='/img/Cyber-Security-Icon-Concept-2-1-1024x632.jpeg')}}" alt="Cyber Security">
+                <div class="category-info">
+                    <h5>Cyber Security</h5>
+                    <small>Course Playlist</small>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <a href="#." class="cat-item">
+                <img src="{{ url_for ('static', filename='/img/backend-technology-concept-with-glowing-lines-background_1017-28405.avif')}}" alt="Back-end">
+                <div class="category-info">
+                    <h5>Back-end</h5>
+                    <small>Course Playlist</small>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <a href="#." class="cat-item">
+                <img src="{{ url_for ('static', filename='/img/FE.png')}}" alt="Front-end">
+                <div class="category-info">
+                    <h5>Front-end</h5>
+                    <small>Courses Playlist</small>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
+            <a href="#." class="cat-item">
+                <img src="{{ url_for ('static', filename='/img/Full-Stack-Developer.jpg')}}" alt="Full-stack">
+                <div class="category-info">
+                    <h5>Full-stack</h5>
+                    <small>Course Playlist</small>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- end of categories -->
+
+
+<!-- Inline CSS for categories -->
+<style>
+    .category-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px 15px;
+        text-align: center;
+    }
+
+    .sections-title {
+        font-size: 1rem;
+        color: #7f117a;;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        color:aliceblue;
+        margin-bottom: 30px;
+    }
+
+    .category-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .cat-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        width: 100%;
+    }
+
+    .cat-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .cat-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .category-info {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: rgba(20, 11, 11, 0.422);
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    .category-info h5 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .category-info small {
+        display: block;
+        font-size: 0.9rem;
+        color:  #ec0de1;;
+    }
+
+    /* Flexbox Layout for Desktop and Mobile */
+    .col-lg-6 {
+        flex: 1 1 48%;  /* Each item takes about 48% of the row, creating two columns */
+        min-height: 250px;
+    }
+
+    @media (max-width: 768px) {
+        .main-title {
+            font-size: 2rem;
+        }
+        .col-lg-6 {
+            flex: 1 1 100%;  /* Each item takes 100% of the row on smaller screens */
+            min-height: 200px;
+        }
+    }
+</style>
+
+<h1>{{ message }}</h1> 
+<a class="btn1" href="{{ url_for('logout') }}">Logout</a>
+<br><br>
+
+<footer role="contentinfo">
+    <div class="footer-content">
+        <!-- Brand Name -->
+        <span class="brand">Learn<span class="highlight">Hub</span></span>
+        
+        <!-- Footer Links -->
+        <ul class="footer-links">
+            <li><a href="#about.html">About</a></li>
+            <li><a href="#category.html">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        
+        <!-- Stay in Touch -->
+        <div>
+            <p class="p1">Stay in touch ^-^</p>
+        </div>
+        <a href="/login" target="_blank" class="btn1">Join Us</a>
+
+        </div>
+        <!-- Copyright -->
+        <p class="copyright">© LearnHub. All Rights Reserved. <span id="year"></span></p>
+    </div>
+</footer>
+
+
+    <!-- Bootstrap JS and dependencies (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000, // Animation duration in milliseconds
+        once: true, // Animation happens only once
+    });
+</script>
+<script src="{{ url_for('static', filename= '/js/code.js') }}"></script>
+
+</body>
+
+</html>

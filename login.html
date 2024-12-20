@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename= '/css/login.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link href="./Free__2_-removebg-preview.png" rel="icon" />
+
+    <title>LearnHub</title>
+  </head>
+  <body>
+    <nav class="navbar dark-theme">
+      <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+      <div class="logo">
+        <img
+          src="{{ url_for ('static', filename='/img/WhatsApp_Image_2024-10-29_at_17.23.00_df2a3353-removebg-preview.png')}}"
+          alt="LearnHub Logo"
+          class="logo-img"
+        />
+        <span class="brand">Learn<span class="highlight">Hub</span></span>
+      </div>
+      <ul class="menu">
+        <li><a href="/" class="nav-item active">Home</a></li>
+        <li><a href="about.html" class="nav-item">About</a></li>
+
+        <!-- Dropdown for Levels -->
+        <li class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle">Levels</a>
+          <ul class="dropdown-menu">
+            <li><a href="/level1" class="dropdown-item">Level-1</a></li>
+            <li><a href="/level2" class="dropdown-item">Level-2</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Fundamentals -->
+        <li class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle">Fundamentals</a>
+          <ul class="dropdown-menu">
+            <li><a href="/proglang" class="dropdown-item">Programming Languages</a></li>
+            <li><a href="/roadmap" class="dropdown-item">Roadmap</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Departments -->
+        <li class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle">Departments</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item">Software Engineering</a></li>
+            <li><a href="#" class="dropdown-item">computer science</a></li>
+            <li><a href="#" class="dropdown-item">Networks</a></li>
+            <li><a href="#" class="dropdown-item">Ai</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="cta">
+        <a href="#" class="profile-icon">👤</a>
+      </div>
+    </nav>
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form action="{{ url_for('submit') }}" method="post">
+          <h1>Create Account</h1>
+          <div class="social-container">
+            <a
+              href="https://www.facebook.com/?locale=ar_AR"
+              class="social"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://accounts.google.com/"
+              class="social"
+              aria-label="Google"
+            >
+              <i class="fab fa-google"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/learning/"
+              class="social"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <span>or use your email for registration</span>
+          <input type="text" name="username" placeholder="Username" required/>
+          <input type="email" name="email" placeholder="Email" required/>
+          <input type="password" name="password" placeholder="Password" required/>
+          <button type="submit" value="Submit">Sign Up</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="{{ url_for('login') }}" method="post">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <a
+              href="https://www.facebook.com/?locale=ar_AR"
+              class="social"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://accounts.google.com/"
+              class="social"
+              aria-label="Google"
+            >
+              <i class="fab fa-google"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/learning/"
+              class="social"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <span>or use your account</span>
+          <input type="email" name="email" placeholder="Email" required/>
+          <input type="password" name="password" placeholder="Password" required/>
+          <input type="submit" value="login">
+        </form>
+        <!-- Display flash messages {% with messages = get_flashed_messages() %} {% if messages %} <ul> {% for message in messages %} <li>{{ message }}</li> {% endfor %} </ul> {% endif %} {% endwith %} -->
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename= '/js/code.js') }}"></script>
+  </body>
+</html>

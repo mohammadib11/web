@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semester Topics</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename= '/css/level2.css') }}">
+</head>
+<body>
+    <nav class="navbar dark-theme">
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <div class="logo">
+            <img src="{{ url_for ('static', filename='/img/Free__2_-removebg-preview.png')}}" alt="LearnHub Logo" class="logo-img">
+            <span class="brand">Learn<span class="highlight">Hub</span></span>
+        </div>
+        <ul class="menu">
+            <li><a href="/" class="nav-item active">Home</a></li>
+            <li><a href="#about.html" class="nav-item">About</a></li>
+
+
+            <!-- Dropdown for Levels -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Levels</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/level1" class="dropdown-item">Level-1</a></li>
+                    <li><a href="/level2" class="dropdown-item">Level-2</a></li>
+                    
+                </ul>
+            </li>
+
+            <!-- Dropdown for Fundamentals -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Fundamentals</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/proglang" class="dropdown-item">Programming Languages</a></li>
+                    <li><a href="/roadmap" class="dropdown-item">Roadmap</a></li>
+                </ul>
+            </li>
+
+            <!-- Dropdown for Departments -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Departments</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Software Engineering</a></li>
+                    <li><a href="#" class="dropdown-item">computer science</a></li>
+                    <li><a href="#" class="dropdown-item">Networks</a></li>
+                    <li><a href="#" class="dropdown-item">Ai</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="cta">
+            <a href="#" class="profile-icon">👤</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Semester - 1</h2>
+        <div class="topics-row">
+            <div class="topic-card">
+                <div class="topic-image linear-algebra"></div>
+                <p>logic design</p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-image physics"></div>
+                <p>linear algebra 2</p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-image intro-cs"></div>
+                <p>probability and statistics</p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-image structured-programming"></div>
+                <p>data structure</p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-image critical-thinking"></div>
+                <p>calculas 2</p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-image critical-thinking"></div>
+                <p>fundmental of management</p>
+            </div>
+        </div>
+    
+        <h2>Semester - 2</h2>
+        <div class="topics-row">
+            <div class="topic-card">
+                <div class="topic-image topic1"></div>
+                <p>Topic Name 1</p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-image topic2"></div>
+                <p>Topic Name 2</p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-image topic3"></div>
+                <p>Topic Name 3</p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-image topic4"></div>
+                <p>Topic Name 4</p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-image topic5"></div>
+                <p>Topic Name 5</p>
+            </div>
+        </div>
+    </div>
+    
+  </div>
+  <script>
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('open');
+    }
+</script>
+</body>
+</html>
